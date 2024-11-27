@@ -156,3 +156,30 @@ console.log(`${endingTime - startingTime} milliseconds`);
 // Build menu
 // Scroll to section on link click
 // Set sections as active
+
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.page__header');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar__menu .menu__link');
+
+ 
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+           
+            navLinks.forEach(link => link.classList.remove('activeLinks'));
+           
+            navLinks[index].classList.add('activeLinks');
+        }
+    });
+});
