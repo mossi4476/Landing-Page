@@ -69,6 +69,7 @@ main {
 section {
     position: relative;
     min-height: 80vh;
+    padding-top: 60px;
 }
 
 
@@ -272,5 +273,44 @@ section.your-active-class .landing__container::after {
 
     to {
         transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+}
+
+/* Highlight active navbar link */
+.navbar__menu .menu__link.active {
+    background-color: #333; /* Active link background */
+    color: white !important; /* Active link text color */
+}
+
+/* ---- Mobile Styles ---- */
+@media only screen and (max-width: 768px) {
+    /* Stack navbar items vertically */
+    .navbar__menu ul {
+        text-align: center; /* Center align for mobile */
+    }
+
+    .navbar__menu li {
+        display: block; /* Stack items */
+        margin: 0.5em 0; /* Add some spacing */
+    }
+
+    /* Adjust section padding to prevent overlap with fixed header */
+    section {
+        padding-top: 80px; /* Adjust this value based on your header height */
+        padding-bottom: 2em; /* Add bottom padding */
+    }
+
+    /* Add margin to the main content area */
+    main {
+        margin: 15vh 1em; /* Increase top margin for mobile */
+    }
+
+    /* Make font sizes responsive */
+    h1 {
+        font-size: 4em; /* Adjust for mobile */
+    }
+
+    h2 {
+        font-size: 2.5em; /* Adjust for mobile */
     }
 }
